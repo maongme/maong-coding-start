@@ -4,36 +4,37 @@
 <title>maongme - home</title>  
 <meta charest="utf-8">
 </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Arapey&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
     * {
-        font-family: 'Cinzel', serif;
-        text-decoration: none;
+        font-family: 'Arapey', serif;
+        font-family: 'DM Serif Display', serif;
+        text-decoration-line: none;
     }
     h1{
-        font-size: 13mm;
-        border-bottom: 0.5px solid #9b988d;
-        margin: 0;
+        display:grid;
+        grid-template-columns:1fr;
+        font-size: 15mm;
+        text-align: center;
+        position:absolute;
+        top:50%; left:50%;
+        transform: translate(-50%,-50%);
+        margin: 0 auto;
         padding: 0px;
     }
-    body{color:#ece9de;
-        background-image: url("backgroundimage_japanroom.jpg");
+    body{
+        background-image: url(index_background_gradient.jpg);
         background-size:cover;
         background-repeat: no-repeat;
          }
-    a{color: #ece9de;}
-    li{
-        padding: 13px;
-    }
+    a{color: #f7f7da;}
+    #shadow {
+    letter-spacing: 0.05em;
+    text-shadow:5px 5px 10px palevioletred;}
 </style>
 <body>
-    <h1><a href="index.html">BLOG</a></h1>
-    <ol>
-        <li><a href="1.html">Diary</a></li>
-        <li><a href="2.html">Coding</a></li>
-        <li><a href="3.html">Photo</a></li>
-        <li><a href="4.html">Video</a></li>
-    </ol>
+    <h1 id ="shadow"><a href="1.html">maong</a></h1>
 </body>
 </html>
