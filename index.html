@@ -11,6 +11,8 @@
     * {
         font-family: 'Arapey', serif;
         font-family: 'DM Serif Display', serif;
+        color: #f7f7da;
+        letter-spacing: 0.03em;
         text-decoration-line: none;
     }
     h1{
@@ -22,17 +24,40 @@
         margin: 0 auto;
         padding: 0px;
     }
+    p{
+        font-size: 3.5mm;
+    } 
     body{
         background-image: url(index_background_gradient.jpg);
         background-size:cover;
         background-repeat: no-repeat;
          }
-    a{color: #f7f7da;}
-    #shadow {
-    letter-spacing: 0.05em;
-    text-shadow:5px 5px 10px palevioletred;}
+    h1:hover {
+        cursor:pointer;
+        text-shadow:5px 5px 60px rgb(255, 255, 250);
+        font-size: 15.5mm;
+        transition: 1s;
+    }
+    .grid{
+        text-align: center;
+        position: absolute;
+        bottom: 1%; left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 0px;
+        margin: 0 auto;
+    }
+    .grid h3, p{
+        margin:0
+    }
 </style>
 <body>
-    <h1 id ="shadow"><a href="1.html">maong</a></h1>
+    <h1><a href="1.html">maong</a></h1>
+    <div class = "grid">
+        <h3>contact</h3>
+        <div class = "contact">
+            <p> e-mail : 332270@naver.com </p>
+            <p> instagram : @maongme </p>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,6 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Castoro&family=Frank+Ruhl+Libre&display=swap');
+
 body {
+    font-family: 'Castoro', serif;
+    font-family: 'Frank Ruhl Libre', serif;
     margin: 0;
-    background-color: #ece9de
+    background-color: #ffffff
 }
 a {
     color : black;
@@ -8,29 +13,43 @@ a {
 }
 h1 {
     font-size: 18mm;
-    text-align:center;
-    border-bottom: 3px solid gray;
-    margin: 0;
-    padding: 20px;
+    text-align:left;
+    font-size: 6mm;
+    padding: 3px;
+    margin: 0%;
 }
-ol {
-    border-right: 1px solid gray;
-    width: 150px;
-    margin: 0;
-    padding: 20px;
+ul {
+    position:absolute;
+    right:0%;
+    margin-right: 20px;
+    margin-top: 0px;
     padding-left: 32px;
+    list-style: none;
+}
+li {
+    padding: 3px;
+    float: left;
+    margin-left: 30px;
+}
+
+.saw {
+    text-decoration-line: underline;
 }
 
 #grid {
     display: grid;
-    grid-template-columns: 210px 3fr;
+    grid-template-columns: 210px 1fr;
+    border-top: 1.5px solid black;
+    margin:15px;
+    padding: 5px;
 }
 
 #grid ol {
     padding-left: 33px;
 }
-#grid #article {
+#article {
     padding-left: 25px;
+    margin-top: 100px;
 }
 @media(max-width:600px) {
     #grid {
