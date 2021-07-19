@@ -18,6 +18,10 @@ h1 {
     padding: 3px;
     margin: 0%;
 }
+h2 {
+    font-size: 18mm;
+    font-weight: 100;
+}
 ul {
     position:absolute;
     right:0%;
