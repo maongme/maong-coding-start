@@ -6,45 +6,39 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <style>
-    .section input[id* = "slide"]{
-        display: none;
+    .slide{
+     width: 724.21px;
+     height: 480px;
+     overflow: hidden;
+     position: absolute;
+     transform: translateX(50%);
     }
-    .section .slidewrap {
-        max-width: 50px;
-        margin: 0 auto;
-        overflow: hidden;
+    .images{
+    position: relative;
+    display:flex;
+    width: 724.21px;
+    height: 480px;
+    margin: 0;
+    object-fit: none;
     }
-    .section .slidelist {
-        white-space: nowrap;
-        font-size: 0;
+
+    button, button:active, button:focus{
+    width1520px; height: 15px; border-radius: 50%;
+    background-color:rgba(128, 128, 0);
+    outline: none;
     }
-    .section .slidelist > li {
-        display:inline-block;
-        vertical-align: middle;
-        width: 100%;
-        transition: all .5s;
+    button:hover{
+    background-color: white;
+    cursor: pointer;
     }
-    .section .slidelist > li > a {
-        display: block;
-        position: relative;
+    button:disabled{
+    background-color: lightgray;
     }
-    .section .slidelist > li > a img {
-        width: 100%;
-    } 
-    .section .slidelist label {
-        position: absolute;
-        z-index: 10;
-        transform: translateY(-50%);
-        padding: 50px;
-        cursor: pointer;
+    .prev{
+    float: left;
     }
-    .section .slidelist .left {
-        left: 30px;
-        background: url(white\ dot.png) center center / 100% no-repeat;
-    }
-    .section .slidelist .right {
-        right: 30px;
-        background: url(white\ dot.png) center center / 100% no-repeat;
+    .next{
+    float: right;
     }
 </style>
 <body>
@@ -59,39 +53,56 @@
     </div>
     <div id="article">
         <h2>PHOTO</h2>
+    </div>
 
-        <div class="section">
-            <input type="radio" name="slide" id="slide01" checked>
-            <input type="radio" name="slide" id="slide02">
-            <input type="radio" name="slide" id="slide03">
-
-            <div class="slidewrap">
-                <ul class="slidelist">
-                    <li>
-                        <a>
-                            <label for="slide03" class="left"></label>
-                            <img src="kyoto1.jpg">
-                            <label for="slide02" class="right"></label>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <label for="slide03" class="left"></label>
-                            <img src="kyoto2.jpg">
-                            <label for="slide02" class="right"></label>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <label for="slide03" class="left"></label>
-                            <img src="kyoto3.jpg">
-                            <label for="slide02" class="right"></label>
-                        </a>
-                    </li>
-                </ul>
+        <div class="slide">
+            <div class="images">
+                <img src="kyoto1.jpg">
+                <img src="kyoto2.jpg">
+                <img src="kyoto3.jpg">
             </div>
         </div>
+        <button class="prev"></button>
+        <button class="next"></button>
 
-    </div>
-</body>
+    <script>
+        let curPos = 0;
+        let postion = 0;
+        const IMAGE_WIDTH = 725;
+        const prevBtn = document.querySelector(".prev")
+        const nextBtn = document.querySelector(".next")
+        const images = document.querySelector(".images")
+        
+        function prev(){
+        if(curPos > 0){
+            nextBtn.removeAttribute("disabled")
+            postion += IMAGE_WIDTH;
+            images.style.transform = `translateX(${postion}px)`;
+            curPos = curPos - 1;
+        }
+        if(curPos == 0){
+            prevBtn.setAttribute('disabled', 'true')
+        }
+        }
+        function next(){
+        if(curPos < 3){
+            prevBtn.removeAttribute("disabled")
+            postion -= IMAGE_WIDTH;
+            images.style.transform = `translateX(${postion}px)`;
+            curPos = curPos + 1;
+        }
+        if(curPos == 3){
+            nextBtn.setAttribute('disabled', 'true')
+        }
+        }
+        
+        function init(){
+        prevBtn.setAttribute('disabled', 'true')
+        prevBtn.addEventListener("click", prev)
+        nextBtn.addEventListener("click", next)
+        }
+        
+        init();
+    </script>
+    </body>
 </html>
