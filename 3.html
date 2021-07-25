@@ -6,13 +6,17 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <style>
-    .slide{
-     width: 723.21px;
-     height: 480px;
-     overflow: hidden;
+    .gallery {
      position: absolute;
      left: 50%;
      transform: translate(-50%);
+     margin: 0 auto;
+    }
+    .slide{
+     position: relative;
+     width: 723.21px;
+     height: 480px;
+     overflow: hidden;
     }
     .images{
     position: relative;
@@ -22,32 +26,31 @@
     margin: 0;
     object-fit: none;
     }
-
     button, button:active, button:focus{
     width:15px; height: 15px; border-radius: 50%;
-    background-color:rgba(128, 128, 0);
-    outline: none;
+    background-color: orange;
+    border: none;
     }
     button:hover{
-    background-color: white;
     cursor: pointer;
+    box-shadow: 0px 0px 3px orangered;
     }
     button:disabled{
     background-color: lightgray;
     }
     .prev{
     float: left;
-    position: absolute;
-    top: 70%;
-    left: 18%;
-    transform: translate(18%, 70%);
+    position: relative;
+    bottom: 250px;
+    right: 15px;
+    transform: translate(-50%);
     }
     .next{
     float: right;
-    position: absolute;
-    top: 70%;
-    right: 18%;
-    transform: translate(-18%, 70%);
+    position: relative;
+    bottom: 250px;
+    left: 15px;
+    transform: translate(50%);
     }
 </style>
 <body>
@@ -63,17 +66,17 @@
     <div id="article">
         <h2>PHOTO</h2>
     </div>
-
+        <div class = "gallery">
         <div class="slide">
-            <div class="images">
-                <img src="kyoto1.jpg">
-                <img src="kyoto2.jpg">
-                <img src="kyoto3.jpg">
+                <div class="images">
+                    <img src="kyoto1.jpg">
+                    <img src="kyoto2.jpg">
+                    <img src="kyoto3.jpg">
+                </div>
             </div>
+            <button class="prev"></button>
+            <button class="next"></button>
         </div>
-        <button class="prev"></button>
-        <button class="next"></button>
-
     <script>
         let curPos = 0;
         let postion = 0;
