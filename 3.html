@@ -7,11 +7,12 @@
 <link rel="stylesheet" href="style.css">
 <style>
     .slide{
-     width: 724.21px;
+     width: 723.21px;
      height: 480px;
      overflow: hidden;
      position: absolute;
-     transform: translateX(50%);
+     left: 50%;
+     transform: translate(-50%);
     }
     .images{
     position: relative;
@@ -23,7 +24,7 @@
     }
 
     button, button:active, button:focus{
-    width1520px; height: 15px; border-radius: 50%;
+    width:15px; height: 15px; border-radius: 50%;
     background-color:rgba(128, 128, 0);
     outline: none;
     }
@@ -36,9 +37,17 @@
     }
     .prev{
     float: left;
+    position: absolute;
+    top: 70%;
+    left: 18%;
+    transform: translate(18%, 70%);
     }
     .next{
     float: right;
+    position: absolute;
+    top: 70%;
+    right: 18%;
+    transform: translate(-18%, 70%);
     }
 </style>
 <body>
@@ -79,6 +88,7 @@
             postion += IMAGE_WIDTH;
             images.style.transform = `translateX(${postion}px)`;
             curPos = curPos - 1;
+            
         }
         if(curPos == 0){
             prevBtn.setAttribute('disabled', 'true')
