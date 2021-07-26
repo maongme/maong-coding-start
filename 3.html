@@ -33,7 +33,7 @@
     }
     button:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 3px orangered;
+    box-shadow: 0px 0px 3px gray;
     }
     button:disabled{
     background-color: lightgray;
@@ -98,13 +98,13 @@
         }
         }
         function next(){
-        if(curPos < 3){
+        if(curPos < 2){
             prevBtn.removeAttribute("disabled")
             postion -= IMAGE_WIDTH;
             images.style.transform = `translateX(${postion}px)`;
             curPos = curPos + 1;
         }
-        if(curPos == 3){
+        if(curPos == 2){
             nextBtn.setAttribute('disabled', 'true')
         }
         }
