@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Object</h1>
+        <h2>Create</h2>
+        <script>
+            var YouTube = {
+                "코딩" : "생활코딩",
+                "운동" : "땅끄부부"
+            };
+
+            document.write("코딩 : "+YouTube.코딩+"<br>");
+            document.write("운동 : "+YouTube.운동+"<br>");
+
+            YouTube.사랑 = "오원";
+            document.write("사랑 : "+YouTube.사랑+"<br>");
+            YouTube["정신과 의사"] = "정우열";
+            document.write("정신과 의사 : "+YouTube["정신과 의사"]+"<br>")
+        </script>
+        <h2>Iterate</h2>
+        <script>
+            for(var key in YouTube) {
+                document.write(key+' : '+YouTube[key]+'<br>');
+            }
+        </script>
+        <h2>Property & Method</h2>
+        <script>
+            YouTube.showAll = function(){                       // = function showAll() {}
+                for(var key in this) {
+                    document.write(key+' : '+this[key]+'<br>');
+                }
+            }
+            YouTube.showAll();
+        </script>
+    </body>
+</html>
+​
