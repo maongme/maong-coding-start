@@ -6,14 +6,35 @@
     </head>
     <body>
         <h2>Input Type Test</h2>
-        <input type = "file" accept="image/*" id="imageFileOpenInput">
         <form method="post" action="upload" enctype="multipart/form-data">
-            <div>
-                file : <input type = "file" accept="image/*">
-            </div>
+        <div>
+            <label for="image_uploed">Choose file to upload</label>
+            <input type="file" id="image_uploed" name="image_uploed" accept="image/*">
+        </div>
+        <div class="preview">
+            <p>no files currently selected for upload</p>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
         </form>
-        <input type = "submit">
-        <input type = "reset">
+
+        <script>
+            var input = document.querySelector('input');
+            var preview = document.querySelector('.preview');
+
+            //버튼의 스타일 제거, label은 input과 동일작동되는 성격을 가짐
+            input.style.opacity = 0;
+            input.addEventListener('change', updateImageDisplay);
+
+            //while 반복문으로 이전 파일의 미리보기 제거
+            function updateImageDisplay() {
+                while(preview.firstChild) {
+                    preview.removeChild(preview.firstChild);
+                }
+            }
+
+        </script>
     </body>
 
 </html>
