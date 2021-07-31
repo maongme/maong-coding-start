@@ -11,12 +11,12 @@ if(curPos > 0){
     postion += IMAGE_WIDTH;
     images.style.transform = `translateX(${postion}px)`;
     curPos = curPos - 1;
-    
 }
 if(curPos == 0){
     prevBtn.setAttribute('disabled', 'true');
 }
 }
+
 function next(){
 if(curPos < 2){
     prevBtn.removeAttribute("disabled");
@@ -28,3 +28,11 @@ if(curPos == 2){
     nextBtn.setAttribute('disabled', 'true');
 }
 }
+
+function init(){
+prevBtn.setAttribute('disabled', 'true');
+prevBtn.addEventListener("click", prev);
+nextBtn.addEventListener("click", next);
+}
+
+init();

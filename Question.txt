@@ -1,0 +1,4 @@
+1. 객체
+ - html / css / javascript 객체의 호출
+
+2. css / jacascript 파일의 연결
