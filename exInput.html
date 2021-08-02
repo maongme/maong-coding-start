@@ -28,36 +28,37 @@
             input.style.opacity = 0;
             input.addEventListener('change', updateImageDisplay);
 
-            //while 반복문으로 이전 파일의 미리보기 제거
-            function updateImageDisplay() {
+            function updateImageDisplay() {                 //while 함수를 통해 기존 preview 제거
                 while(preview.firstChild) {
                     preview.removeChild(preview.firstChild);
                 }
 
-            const curFiles = input.files;
-            if(curFiles.length === 0) {
+            const curFiles = input.files;                   //curFile에 입력된 파일 추가
+            if(curFiles.length === 0) {                     //입력된 파일이 없는 경우
                 const para = document.createElement('p');
                 para.textContent = 'No files currently selected for upload';
                 preview.appendChild(para);
-            } else {
+            } else {                                        //입력된 파일이 있는 경우
                 const list = document.createElement('ol');
-                preview.appendChild(list);
+                preview.appendChild(list);                  //preview를 ordered list로 출력할 수 있도록 함
 
-                for(const file of curFiles) {
+                for(const file of curFiles) {               //curFiles 배열의 모든 file 파일이름, 사이즈 출력
                     const listItem = document.createElement('li');
                     const para = document.createElement('p');
-                    if(validFileType(file)) {
-                        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+                    if(validFileType(file)) {               //유효한 타입의 파일인 경우
+                        //para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+                        para.textContent = 'File name :'+(file.name)+ ' file size : ' + returnFileSize(file.size);
                         const image = document.createElement('img');
-                        image.src = URL.createObjectURL(file);
+                        image.src = URL.createObjectURL(file);       //file의 주소를 통해 이미지 삽입
 
                         listItem.appendChild(image);
                         listItem.appendChild(para);
-                    } else {
-                        para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
+                    } else {                                 //유효하지 않은 타입의 파일인 경우
+                        //para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
+                        para.textContent = ('File name :' + (file.name) + ' : Not a valid file type. Update your selection.');
                         listItem.appendChild(para);
                     }
-                    list.appendChild(listItem);
+                    list.appendChild(listItem);            //for구문으로 작업한 listItem을 list로 넣어 preview로
                     }
                 }
             }
