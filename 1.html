@@ -5,6 +5,27 @@
 <meta charest="utf-8">
 </head>
 <link rel="stylesheet" href="style.css">
+<!-- Bootstrap CSS CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<style>
+    table {
+        margin-top: 50px;
+    }
+    .text-centerCSS{
+        text-align: center;
+        display: inline-block;
+        }
+
+    .paginationCSS li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0;
+    }
+
+</style>
 <body>
 <div id="grid">
     <h1>maongme</h1>
@@ -22,27 +43,46 @@
         <br> What do we love? </p>
         <br><img src="web1.jpg" width="150">
     </div>
-    <div class="diaryPost">
-        <h3>How was your day?</h3>
-        <form action="form.jsp" method="post">
-        <div class = "form-group">
-            <label for="diaryPostTitle">Title</label>
-            <input type="text" class="form-control" id="diaryPostTitle"
-            placeholder="제목 입력(4-100)" name="title"
-            max="100" required="required" pattern=".{4, 100}">
-        </div>
-        <div class = "form-group">
-            <label for="diaryPostContent">Content</label>
-            <textarea class="form-group" rows="5" id="diaryPostContent"
-            name="content" placeholder="내용 작성"></textarea>
-        </div>
-        <div class = "form-group">
-            <label for = "diaryPostWriter">Writer</label>
-            <input type="text" class="form-group" id="diaryPostWriter"
-            placeholder="작성자(2-10)" name="writer">
-        </div>
-        <button type="submit" class="btn btn-default">등록</button>
-        </form>
+    <div class = "container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>Man up</td>
+                <td>maongme</td>
+                <td>2021.07.30</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Introduction</td>
+                <td>maongme</td>
+                <td>2021.07.10</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="1-write.html">글쓰기</a>
+
+    <div class="text-centerCSS">
+        <ul class="paginationCSS">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
+    </div>
     </div>
 </body>
 </html>
