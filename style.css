@@ -10,6 +10,7 @@ body {
 a {
     color : black;
     text-decoration: none;
+    cursor: pointer;
 }
 h1 {
     font-size: 18mm;
@@ -22,6 +23,11 @@ h2 {
     font-size: 18mm;
     font-weight: 100;
 }
+
+h3 {
+    font-size: 8mm;
+}
+
 ul {
     position:absolute;
     right:0%;
@@ -68,16 +74,17 @@ li {
 }
 
 .diaryPost {
-    margin-top: 30px;
+    border : 1px solid lightgray;
+    margin: 30px;
     padding: 25px;
-    background-color:rgb(255, 230, 221);
+    text-align: center;
 }
 
 input, textarea {
-    cursor: text;
+    cursor: text;W
     box-sizing: border-box;
     resize: vertical;
-    width: 40%;
+    width: 60%;
     display: inline-block;
     
 }
@@ -91,7 +98,7 @@ label {
 
 
 button[type=submit] {
-    background-color:lightcoral;
+    background-color:lightgray;
     color: white;
     margin-top: 20px;
     padding: 8px 12px;
