@@ -5,6 +5,43 @@
 <meta charest="utf-8">
 </head>
 <link rel="stylesheet" href="style.css">
+<style>
+    .DiaryViewFormButton input{
+        width: 50px;
+        text-align: center;
+        margin-left: 50px;
+        cursor: pointer;
+        float: left;
+        display: inline-block;
+    }
+
+    table {
+        margin-top: 0;
+        resize: vertical;
+        width: 60%;
+        display: inline-block;
+        position: relative;
+        border-collapse: collapse;
+        width: 90%;
+        margin: auto;
+    }
+
+    th, td {
+        border-bottom: 1px solid black;
+        padding: 13px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: rgb(250, 249, 249);
+        color: black;
+    }
+
+    .script {
+        display: inline-block;
+    }
+</style>
 <body>
 <div id="grid">
     <h1> <a href="index.html">maongme</a></h1>
@@ -23,25 +60,40 @@
     </div>
     <div class="diaryPost">
         <h3>How was your day?</h3>
-        <img src="web1.jpg" width="150">
-        <form action="form.jsp" method="post">
-        <div class = "form-group">
-            <label for="diaryPostTitle">Title</label>
-            <input type="text" class="form-control" id="diaryPostTitle"
-            placeholder="제목 입력(4-100)" name="title"
-            max="100" required="required" pattern=".{4, 100}">
-        </div>
-        <div class = "form-group">
-            <label for="diaryPostContent">Content</label>
-            <textarea class="form-group" rows="5" id="diaryPostContent"
-            name="content" placeholder="내용 작성"></textarea>
-        </div>
-        <div class = "form-group">
-            <label for = "diaryPostWriter">Writer</label>
-            <input type="text" class="form-group" id="diaryPostWriter"
-            placeholder="작성자(2-10)" name="writer">
-        </div>
-        <button type="submit" class="btn btn-default">등록</button>
+        <form name="DiaryViewForm" method="post">
+        <table summary="전체 테이블 구성">
+            <tr>
+                <td><h3><b>Man up</b></h3></td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    <table summary="목록 테이블 구성">
+                        <tr class="script">
+                            <td>You're holding on to a feeling, and that feeling will eventually pass. Promise.</td>
+                        </tr>
+                        <tr>
+                            <td>Writer</td>
+                            <td>maongme</td>
+                            <td>Date</td>
+                            <td>2021.07.13</td>
+                        </tr>
+                        <tr>
+                            <td>Views : 12</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    <hr size=1>
+                    <div class="DiaryViewFormButton">
+                        <input type="button" value="목록" onclick="location.href='1.html'">
+                        <input type="button" value="수정">
+                        <input type="button" value="삭제">
+                    </div>
+                </td>
+            </tr>
+        </table>
         </form>
     </div>
 </body>
