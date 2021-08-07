@@ -9,28 +9,33 @@
     .DiaryViewFormButton input{
         width: 50px;
         text-align: center;
-        margin-left: 50px;
+        margin-left: 80px;
         cursor: pointer;
         float: left;
         display: inline-block;
     }
 
     table {
-        margin-top: 0;
         resize: vertical;
-        width: 60%;
         display: inline-block;
         position: relative;
         border-collapse: collapse;
         width: 90%;
         margin: auto;
+        margin-top: 0;
     }
 
-    th, td {
+    tbody {
+        display: inline-block;
+    }
+
+    td {
         border-bottom: 1px solid black;
-        padding: 13px;
+        padding: 10px;
         text-align: center;
         font-size: 14px;
+        width: 100%;
+        
     }
 
     th {
@@ -41,6 +46,8 @@
     .script {
         display: inline-block;
     }
+
+
 </style>
 <body>
 <div id="grid">
@@ -68,18 +75,19 @@
             <tr>
                 <td colspan=2>
                     <table summary="목록 테이블 구성">
-                        <tr class="script">
-                            <td>You're holding on to a feeling, and that feeling will eventually pass. Promise.</td>
-                        </tr>
+                        <p class="script">
+                            You're holding on to a feeling, and that feeling will eventually pass. Promise.
+                        </p>
+                        <div class="DiaryInforamtion">
                         <tr>
                             <td>Writer</td>
                             <td>maongme</td>
+                        </tr>
+                        <tr>
                             <td>Date</td>
                             <td>2021.07.13</td>
                         </tr>
-                        <tr>
-                            <td>Views : 12</td>
-                        </tr>
+                        </div>
                     </table>
                 </td>
             </tr>
